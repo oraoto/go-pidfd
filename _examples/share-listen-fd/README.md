@@ -1,5 +1,11 @@
 ## Share listen socket
 
+`PTRACE_MODE_ATTACH_REALCREDS` permission is required:
+
+```
+echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
+```
+
 Build:
 
 ```
@@ -9,14 +15,14 @@ go build
 Start a http server:
 
 ```
-./main
+./share-listen-fd
 Listen fd = 3 , pid = 989509
 ```
 
 In anthoer terminal, "steal"" the listen fd:
 
 ```
-sudo ./main -fd 3 -pid 989509
+sudo ./share-listen-fd -fd 3 -pid 989509
 ```
 
 Then, send some http request:

@@ -7,5 +7,6 @@ Go bindings to `pidfd_open`, `pidfd_getfd`, `pidfd_send_signal`on Linux 5.6+.
 
 ## Example Usages
 
-- [Share listening socket](./examples/share-listen-fd), without fork or sendmsg
+- [Share listening socket](./_examples/share-listen-fd), without fork or sendmsg
+  - [Graceful upgrade](./_examples/graceful-upgrade)
 - Process management
